@@ -5,7 +5,7 @@ import Home from "./pages/home"
 import About from "./pages/about"
 
 
-Import"./server"
+//Import"./server"
 
 function App() {
 
@@ -27,4 +27,4 @@ function App() {
 
 ReactDom
 .createRoot(document.getElementById('root'))
-.render(<App/>)
+.render(<App/>);
