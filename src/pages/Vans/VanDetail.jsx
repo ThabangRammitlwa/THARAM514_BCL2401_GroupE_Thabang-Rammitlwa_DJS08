@@ -5,5 +5,7 @@ export default function Vans(){
     const useParams= VanDetail()
     console.log(params)
 
+
+    
     return <h1>Van detail goes here</h1>
 }
