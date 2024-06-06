@@ -1,13 +1,13 @@
 import React from "react"
 import ReactDom from 'react-dom/client';
 import { BrowserRouter,Routes, Route ,Link } from "react-router-dom";
-import Home from "./pages/Home"
-import About from "./pages/about"
-import Vans from "./pages/Vans"
-import VanDetail from "./pages/VanDetail"
+import Home from "./Home"
+import About from "./About"
+import Vans from "./Vans"
+import VanDetail from "./VanDetail"
 
 
-//Import"./server"
+import"./server"
 
 function App() {
 
