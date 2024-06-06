@@ -1,28 +1,29 @@
 import React from "react"
-import ReactDom from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter,Routes, Route ,Link } from "react-router-dom";
-import Home from "./Home"
-import About from "./About"
-import Vans from "./Vans"
-import VanDetail from "./VanDetail"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Vans from "./pages/Vans"
+import VanDetail from "./pages/VanDetail"
 
 
 import"./server"
 
-function App() {
+export default function App() {
 
   return (
     <BrowserRouter>
-    <hearder>
-      <link classname="site-logo" to="/">#vanLife</link>
+    <header>
+      <Link className="site-logo" to="/">#vanLife</Link>
       <nav>
-        <link to="/about">About</link>
+        <Link to="/about">About</Link>
         <Link to="/vans">Vans</Link>
         </nav>
-    </hearder>
+    </header>
+    
     <Routes>
       <Route path="/"elements={<Home/>} />
-      <Route path="/"elements={<About/>} />
+      <Route path="/about"elements={<About/>} />
       <Route path="/vans" element={<Vans />} />
       <Route path="/vans/:id" element={<VanDetail />} />
       </Routes>
@@ -31,6 +32,3 @@ function App() {
   )
 }
 
-ReactDom
-.createRoot(document.getElementById('root'))
-.render(<App/>);
