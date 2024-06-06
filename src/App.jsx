@@ -5,6 +5,11 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from "./pages/Vans/Vans"
 import VanDetail from "./pages/Vans/VanDetail"
+import Dashboard from "./pages/Host/Dashboard"
+import Income from "./pages/Host/Income"
+import Reviews from "./pages/Host/Reviews"
+import Layout from "./components/Layout"
+import HostLayout from "./components/HostLayout"
 
 
 import"./server"
@@ -12,22 +17,21 @@ import"./server"
 export default function App() {
 
   return (
-    <BrowserRouter>
-    <header>
-      <Link className="site-logo" to="/">#vanLife</Link>
-      <nav>
-        <Link to="/about">About</Link>
-        <Link to="/vans">Vans</Link>
-        </nav>
-    </header>
-    
+    <BrowserRouter>  
     <Routes>
+    <Route path="/" element={<Layout />}>
       <Route path="/"elements={<Home/>} />
       <Route path="/about"elements={<About/>} />
       <Route path="/vans" element={<Vans />} />
       <Route path="/vans/:id" element={<VanDetail />} />
-      </Routes>
 
+      <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+        </Route>
+      </Routes>
       </BrowserRouter>
   )
 }
