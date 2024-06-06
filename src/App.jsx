@@ -3,6 +3,7 @@ import ReactDom from 'react-dom/client';
 import { BrowserRouter,Routes, Route ,Link } from "react-router-dom";
 import Home from "./pages/home"
 import About from "./pages/about"
+import Vans from "./pages/Vans"
 
 
 //Import"./server"
