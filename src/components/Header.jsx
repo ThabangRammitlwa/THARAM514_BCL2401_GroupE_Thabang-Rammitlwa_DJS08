@@ -1,42 +1,47 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
+import imageUrl from "/src/assets/images/avatar-icon.png"
 
 export default function Header() {
-    /**
-     * Challenge - part 1:
-     * Make the main navbar indicate the currently-active route. (You can
-     * leave the home link alone, since it's doubling as our logo. Only
-     * make changes to the /host, /about, and /vans links)
-     * 
-     * Use the following CSS rules:
-     *      font-weight: bold;
-     *      text-decoration: underline;
-     *      color: #161616;
-     * 
-     * You can use either inline styles or a className.
-     */
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
+
+    function fakeLogOut() {
+        localStorage.removeItem("loggedin")
+    }
+
     return (
         <header>
             <Link className="site-logo" to="/">#VanLife</Link>
             <nav>
-                <NavLink 
+                <NavLink
                     to="/host"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    style={({ isActive }) => isActive ? activeStyles : null}
                 >
                     Host
                 </NavLink>
-                <NavLink 
+                <NavLink
                     to="/about"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    style={({ isActive }) => isActive ? activeStyles : null}
                 >
                     About
                 </NavLink>
-                <NavLink 
+                <NavLink
                     to="/vans"
-                    className={({isActive}) => isActive ? "active-link" : null}
+                    style={({ isActive }) => isActive ? activeStyles : null}
                 >
                     Vans
                 </NavLink>
+                <Link to="login" className="login-link">
+                    <img
+                        src={imageUrl}
+                        className="login-icon"
+                    />
+                </Link>
+                <button onClick={fakeLogOut}>X</button>
             </nav>
         </header>
     )

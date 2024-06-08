@@ -21,7 +21,7 @@ import AuthRequired from "./components/AuthRequired"
 
 import "./server"
 
-function App() {
+export default function App() {
 
   return (
     <BrowserRouter>
